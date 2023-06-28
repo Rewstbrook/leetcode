@@ -6,10 +6,12 @@ function removeDuplicates(s) {
     const stack = [];
     for (let i = 0; i < s.length; i++) {
         // const current = stack.pop();
-        if (s[i] != stack.pop()) {
+        if (s[i] == stack[stack.length - 1]) {
+            stack.pop();
+        } else {
             stack.push(s[i]);
         }
     }
-    return stack.join();
+    return stack.join("");
 }
 console.log(removeDuplicates("abbaca"))
