@@ -121,8 +121,8 @@ function postorderTraversal1(node) {
     while(stack.length) {
         const current = stack.pop();
         node.right && postorderTraversal1(node.right);
-        node
-        nodeList.pus
+        node.left && postorderTraversal1(node.left);
+        nodeList.push(current.value);
     }
 }
 console.log(inorderTraversal1(tree));
