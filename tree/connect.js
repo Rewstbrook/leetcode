@@ -26,10 +26,23 @@ function connect(root) {
     const queue = [root];
     let preNode = null;
     while (queue.length > 0) {
-        // let len = 
-        let currentNode = queue.shift();
-        if (currentNode) {
-            currentNode.next = 
+        let len = queue.length;
+        while (len > 0) {
+            let currentNode = queue.shift();
+            if (len > 1) {
+                currentNode.next = queue[0];
+            } else {
+                currentNode.next = null;
+            }
+            if (currentNode.left) {
+                queue.push(currentNode.left);
+            }
+            if (currentNode.right) {
+                queue.push(currentNode.right);
+            }
+            len--;
         }
     }
+    return root;
 }
+console.log(connect(tree));
