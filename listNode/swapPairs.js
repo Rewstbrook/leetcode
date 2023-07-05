@@ -11,7 +11,7 @@
 function swapPairs(head) {
     let dummyHead = new ListNode(0, head);
     let current = dummyHead;
-    while (current.next && current.next) {
+    while (current.next && current.next.next) {
         let start = current.next;       // 两两交换的开始节点
         let end = current.next.next;    // 两两交换的结束节点
         
