@@ -87,3 +87,22 @@ function moveZeroes3(nums) {
 }
 // moveZeroes3([0,1,0,3,4]);
 console.log(moveZeroes3([0,1,0,3,2]));
+
+
+/**
+ * @description 给你一个有序数组 nums ，请你 原地 删除重复出现的元素，使得出现次数超过k次的元素只出现k次 ，返回删除后数组的新长度。
+                不要使用额外的数组空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。
+ */
+function removeDuplicatesAdvance(nums, k) {
+    let count = 0;
+    for (let item of nums) {
+        // count < k是为了优先取出来前k个元素
+        // nums[count - k]是取出来当前位置前面第k个元素
+        if (count < k || nums[count - k] != item) {
+            nums[count] = item;
+            count++;
+        }
+    }
+    return count;
+}
+console.log(removeDuplicatesAdvance([1, 1, 1, 1, 2, 2, 2, 2, 4, 4, 4, 4], 3))
