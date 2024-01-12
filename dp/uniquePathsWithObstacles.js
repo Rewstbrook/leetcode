@@ -22,7 +22,6 @@ function uniquePathsWithObstacles(obstacleGrid) {
             }
         }
     }
-    console.log(obstacleGrid);
     return obstacleGrid[m - 1][n - 1];
 }
 uniquePathsWithObstacles([[0,0,0],[0,1,0],[0,0,0]])

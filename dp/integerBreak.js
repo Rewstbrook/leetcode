@@ -30,7 +30,6 @@ function integerBreak(n) {
             dp[i] = Math.max(dp[i], Math.max(j * (i - j), j * dp[i - j]));
         }
     }
-    console.log(dp)
     return dp[n];
 }
 console.log(integerBreak(10));
